@@ -1,8 +1,9 @@
 from .. import draw_line
 import pandas as PD
+import os
 
 
-def clean_data(dataset):
+def clean_data(dataset, output_path):
   draw_line("Cleaning Data")
 
   initial_rows = len(dataset)
@@ -22,6 +23,12 @@ def clean_data(dataset):
   # Feature engineering: Create TotalAmount
   df_clean['TotalAmount'] = df_clean['Quantity'] * df_clean['UnitPrice']
 
+  # Save
+  df_clean.to_csv(os.path.join(
+      output_path, 'cleaned_data.csv'), index=False)
+
+  print(
+      f"Saved cleaned data to {os.path.join(output_path, 'cleaned_data.csv')}")
   print(
       f"Initial Records: {initial_rows}. Final Clean Records: {len(df_clean)}.")
   return df_clean

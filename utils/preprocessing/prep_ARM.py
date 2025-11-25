@@ -2,7 +2,7 @@ import os
 from .. import draw_line
 
 
-def prep_ARM(dataset, outputPath):
+def prep_ARM(dataset, output_path):
   draw_line("Preprocessing for Association Rule Mining")
 
   df_arm = dataset.copy()
@@ -19,6 +19,7 @@ def prep_ARM(dataset, outputPath):
 
   # Save
   arm_transactions.to_csv(os.path.join(
-      outputPath, 'arm_transactions.csv'), index=False)
+      output_path, 'arm_transactions.csv'), index=False)
   print(
-      f"Saved ARM data to {os.path.join(outputPath, 'arm_transactions.csv')}")
+      f"Saved ARM data to {os.path.join(output_path, 'arm_transactions.csv')}")
+  return arm_transactions
