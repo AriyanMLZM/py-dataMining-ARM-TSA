@@ -11,13 +11,3 @@ def load_csv(datasetPath):
   except:
     print("Error Loading Dataset")
     return None
-
-
-def save_csv(dataset, datasetPath):
-  draw_line("Saving New Dataset")
-  try:
-    dataset.to_csv(datasetPath, index=False)
-    print(f"New Data saved in {datasetPath}")
-  except:
-    print("Error Saving New Dataset")
-    return None

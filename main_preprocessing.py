@@ -1,10 +1,10 @@
-from utils.preprocessing import detect_missing_values
-from utils import load_csv, save_csv, draw_line
+from utils.preprocessing import detect_missing_values, clean_data, prep_ARM, prep_TSA
+from utils import load_csv
+import os
 
 # Paths
-dataset_path = './dataset/Online Retail.csv'
-output_path = './output/cleaned_data.csv'
-plots_path = './plots/'
+dataset_path = '.\dataset\online_retail.csv'
+output_cleaned_path = '.\output\cleaned'
 
 
 def main():
@@ -15,8 +15,14 @@ def main():
     print('\nFirst 10 rows:')
     print(dataset.head(10))
 
-    # Handle missing values
+    # Clean data
     detect_missing_values(dataset)
+    cleaned_data = clean_data(dataset)
+
+    # Preprocessing for ARM and TSA analysis
+    os.makedirs(output_cleaned_path, exist_ok=True)
+    prep_ARM(cleaned_data, outputPath=output_cleaned_path)
+    prep_TSA(cleaned_data, outputPath=output_cleaned_path)
 
 
 if __name__ == '__main__':
