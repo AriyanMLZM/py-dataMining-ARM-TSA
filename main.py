@@ -1,16 +1,11 @@
-import os
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-from main_preprocessing import main as preprocessing
+from .main_preprocessing import main as preprocessing
+from .main_ARM import main as arm
 
 
 def main():
-  print("\n# Preprocessing")
   preprocessing()
+  arm()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
   main()
-
