@@ -45,7 +45,7 @@ def plot_network_diagram(rules_df, output_path):
   NX.draw_networkx_labels(G, pos, font_size=10, font_family='sans-serif')
 
   plt.title(
-      'Network Diagram of Top Association Rules (Edge Width $\propto$ Lift)', fontsize=16)
+      "Network Diagram of Top Association Rules", fontsize=16)
   plt.axis('off')
 
   plot_file = os.path.join(output_path, 'arm_network_diagram.png')
