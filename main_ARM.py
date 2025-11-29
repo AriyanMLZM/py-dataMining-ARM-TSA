@@ -22,6 +22,10 @@ def main():
     print("Top 10 association rules (lift > 1, sorted by lift)")
     print(final_rules_table.to_string(
         index=False, float_format=lambda x: f'{x:.3f}'))
+    final_rules_table.to_csv(os.path.join(
+        './output', 'top_arm_rules.csv'), index=False)
+    print(
+        f"\nSaved top association rules to {os.path.join('./output', 'top_arm_rules.csv')}")
 
     os.makedirs(OUTPUT_PLOTS_PATH, exist_ok=True)
     plot_rules(all_rules, OUTPUT_PLOTS_PATH)
