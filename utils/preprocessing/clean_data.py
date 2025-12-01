@@ -31,4 +31,7 @@ def clean_data(dataset, output_path):
       f"Saved cleaned data to {os.path.join(output_path, 'cleaned_data.csv')}")
   print(
       f"Initial Records: {initial_rows}. Final Clean Records: {len(df_clean)}.")
+  print("\nFist five records of cleaned data:")
+  print(df_clean.head(5))
+
   return df_clean

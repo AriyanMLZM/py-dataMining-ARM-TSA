@@ -15,4 +15,7 @@ def prep_TSA(dataset, output_path):
 
   print(
       f"Saved TSA data to {os.path.join(output_path, 'tsa_daily_sales.csv')}")
+  print("\nFirst five records of TSA Dataset:")
+  print(tsa_daily_sales.head(5))
+
   return tsa_daily_sales

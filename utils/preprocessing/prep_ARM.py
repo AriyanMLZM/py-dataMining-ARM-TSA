@@ -22,4 +22,7 @@ def prep_ARM(dataset, output_path):
       output_path, 'arm_transactions.csv'), index=False)
   print(
       f"Saved ARM data to {os.path.join(output_path, 'arm_transactions.csv')}")
+  print("\nFirst five Records of ARM Dataset:")
+  print(arm_transactions.head(5))
+
   return arm_transactions
